@@ -1,6 +1,6 @@
 {
   "name": "@namnode/store",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A simple implementation of state management across projects",
   "author": "Nam Nguyen <nam.nguyen.node@gmail.com>",
   "repository": "willnguyen1312/namnode",
