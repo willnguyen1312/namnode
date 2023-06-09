@@ -13,4 +13,4 @@ export function makeMaybeCallFunction<T>(predicateFn: () => boolean, fn: (arg: T
   }
 }
 
-export const sleep = (millisecond: number) => new Promise(resolve => setTimeout(resolve, millisecond))
+export const sleep = (millisecond: number) => new Promise((resolve) => setTimeout(resolve, millisecond))
