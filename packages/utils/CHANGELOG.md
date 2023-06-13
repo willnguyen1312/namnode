@@ -1,5 +1,13 @@
 # @namnode/utils
 
+## 0.3.0
+
+### Minor Changes
+
+- [#5](https://github.com/willnguyen1312/namnode/pull/5)
+  [`32bb45b`](https://github.com/willnguyen1312/namnode/commit/32bb45b19f9863914f4d2215e755ef4b6f3c8255) Thanks
+  [@willnguyen1312](https://github.com/willnguyen1312)! - Add loadScript util 🚀
+
 ## 0.2.0
 
 ### Minor Changes
