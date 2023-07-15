@@ -1,5 +1,13 @@
 # @namnode/utils
 
+## 0.4.0
+
+### Minor Changes
+
+- [#8](https://github.com/willnguyen1312/namnode/pull/8)
+  [`1202cde`](https://github.com/willnguyen1312/namnode/commit/1202cdecaf1c2e38f7d1ed3f1b2f4cd17b4e9e9c) Thanks
+  [@willnguyen1312](https://github.com/willnguyen1312)! - Add overrideObjectProps function 💞
+
 ## 0.3.0
 
 ### Minor Changes
