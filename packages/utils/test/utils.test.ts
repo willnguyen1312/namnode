@@ -1,7 +1,7 @@
-import fc from "fast-check"
 import { faker } from "@faker-js/faker"
-import { clamp, makeMaybeCallFunction } from "../src"
+import fc from "fast-check"
 import { it } from "vitest"
+import { clamp, makeMaybeCallFunction, overrideObjectProps } from "../src"
 
 describe("clamp functions", () => {
   it("should work for value in between inclusively", () => {
@@ -50,5 +50,31 @@ describe("makeMaybeCallFunction function", () => {
         expect(mockFn).toHaveBeenCalledTimes(value ? 1 : 0)
       }),
     )
+  })
+})
+
+describe("overrideObjectProps function", () => {
+  it("should override properties in the target object with properties from the override object", () => {
+    const target = { a: faker.number.int(), b: faker.number.int() }
+    const override = { b: faker.number.int() }
+
+    overrideObjectProps(target, override)
+    expect(target).toEqual({ a: target.a, b: override.b })
+  })
+
+  it("should add new properties to the target object", () => {
+    const target = { a: faker.number.int(), b: faker.number.int() }
+    const override = { c: faker.number.int(), d: faker.number.int() }
+
+    overrideObjectProps(target, override)
+    expect(target).toEqual({ a: target.a, b: target.b, c: override.c, d: override.d })
+  })
+
+  it("should not do anything on empty override object", () => {
+    const target = { a: faker.number.int(), b: faker.number.int() }
+    const override = {}
+
+    overrideObjectProps(target, override)
+    expect(target).toEqual(target)
   })
 })

@@ -44,3 +44,15 @@ const createLoadScript = () => {
 }
 
 export const loadScript = createLoadScript()
+
+/**
+ *
+ * This function is used to override the target object with the source object. It is useful to overcome TypeScript conservative type checking approach
+ *
+ * Reference - https://www.reddit.com/r/typescript/comments/yin5xa/comment/iums6vy/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
+ */
+export const overrideObjectProps = (target: Record<string, unknown>, override: Record<string, unknown>) => {
+  for (const key in override) {
+    target[key] = override[key]
+  }
+}
