@@ -1,12 +1,17 @@
-import { Node, parseAsync, traverse } from "@babel/core"
+import { Node, PluginItem, parseAsync, traverse } from "@babel/core"
 import MagicString from "magic-string"
 import type { Plugin } from "vite"
 
 type Options = {
   predicate?: (node: Node) => boolean
+  plugins?: PluginItem[]
 }
 
-export function inspectReact(option: Options = {}): Plugin {
+export function inspectReact(
+  options: Options = {
+    plugins: [],
+  },
+): Plugin {
   return {
     name: "vite-plugin-inspect-react",
 
@@ -30,11 +35,12 @@ export function inspectReact(option: Options = {}): Plugin {
           filename: id,
           ast: true,
           presets: ["@babel/preset-env", "@babel/preset-react", "@babel/preset-typescript"],
+          plugins: options.plugins,
         })
 
         traverse(ast as Node, {
           enter({ node }) {
-            if (option.predicate && !option.predicate(node)) {
+            if (options.predicate && !options.predicate(node)) {
               return
             }
 
