@@ -1,5 +1,11 @@
 # @namnode/vite-plugin-inspect-react
 
+## 1.1.0
+
+### Minor Changes
+
+- [#13](https://github.com/willnguyen1312/namnode/pull/13) [`7acb4a8`](https://github.com/willnguyen1312/namnode/commit/7acb4a816b7c26cab40c5f100d122c1d1f764a70) Thanks [@willnguyen1312](https://github.com/willnguyen1312)! - Enhance vite plugin inspect react 💞
+
 ## 1.0.0
 
 ### Major Changes
