@@ -2,8 +2,9 @@
 
 ## WHY 🙈
 
-This plugin will wrap your react component inside your codebase with a hidden span that does not affect your layout.
-Yet, it comes with an ID that stores the location of the next sibling of the span inside your code.
+This plugin will wrap your react components inside your codebase during compile time with hidden span elements that do
+not affect your layout. Yet, those come with unique `data-inspect-id` attributes that store the location of your React
+components accordingly.
 
 This plugin is highly inspired by another fantastic plugin so-called
 [vite-plugin-react-inspector](https://github.com/sudongyuer/vite-plugin-react-inspector). The reason this plugin exists
@@ -11,6 +12,10 @@ because not all React's component libraries are built with the same structure. T
 the flexibility of the component's structure. For instance, some component libraries do not allow you to pass any props
 to the root component other than their defined set of props. This plugin will help you inspect the component's structure
 by wrapping a tiny hidden span around your component.
+
+## Demo
+
+https://github.com/willnguyen1312/namnode/assets/17794897/cbcad980-fae2-4276-89bf-54a5bb8951ab
 
 ## Installation 🚀
 

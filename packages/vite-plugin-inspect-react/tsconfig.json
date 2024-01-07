@@ -6,6 +6,7 @@
     "types": ["vitest/importMeta", "vitest/globals"],
     "lib": ["ESNext", "DOM"],
     "target": "ESNext",
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "module": "ESNext"
   }
 }
