@@ -28,7 +28,9 @@
     "dev": "vite",
     "lint": "eslint \"src/**/*.ts*\"",
     "preview": "vite preview",
-    "test": "vitest"
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui"
   },
   "devDependencies": {
     "@testing-library/react": "^14.1.2",

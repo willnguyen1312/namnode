@@ -34,6 +34,7 @@ export function inspectReact(): Plugin {
               const { start, end } = node
 
               // Make sure all necessary properties exist
+              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
               // @ts-expect-error
               if (node?.openingElement?.name?.object?.name === "React" || !start || !end || !node?.loc?.start) return
 
