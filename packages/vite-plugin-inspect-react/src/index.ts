@@ -4,6 +4,7 @@ import { dirname } from "path"
 import { fileURLToPath } from "url"
 import type { Plugin } from "vite"
 
+// Credit to https://antfu.me/posts/isomorphic-dirname
 const DIRNAME = typeof __dirname !== "undefined" ? __dirname : dirname(fileURLToPath(import.meta.url))
 const rootDirectory = dirname(DIRNAME)
 
