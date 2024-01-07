@@ -17,8 +17,6 @@ by wrapping a tiny hidden span around your component.
 
 https://github.com/willnguyen1312/namnode/assets/17794897/cbcad980-fae2-4276-89bf-54a5bb8951ab
 
-
-
 ## Installation 🚀
 
 ```bash
