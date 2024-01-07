@@ -2,7 +2,11 @@ import { Node, parseAsync, traverse } from "@babel/core"
 import MagicString from "magic-string"
 import type { Plugin } from "vite"
 
-export function inspectReact(): Plugin {
+type Options = {
+  predicate?: (node: Node) => boolean
+}
+
+export function inspectReact(option: Options = {}): Plugin {
   return {
     name: "vite-plugin-inspect-react",
 
@@ -30,6 +34,10 @@ export function inspectReact(): Plugin {
 
         traverse(ast as Node, {
           enter({ node }) {
+            if (option.predicate && !option.predicate(node)) {
+              return
+            }
+
             if (node.type === "JSXElement") {
               const { start, end } = node
 
