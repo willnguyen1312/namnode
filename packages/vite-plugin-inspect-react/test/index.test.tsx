@@ -22,11 +22,7 @@ describe("vite-plugin-inspect-react", () => {
     const hiThereText = screen.getByText(/hi there/i)
 
     const nearestInjectedNode = traverseBottomUp(hiThereText, (node) => {
-      // const isCurrentNode
-      // return !!node.hidden && node.tagName === "SPAN"
-
       let currentNode = node
-
       while (currentNode.previousSibling) {
         const sib = currentNode.previousSibling as HTMLElement
 
@@ -44,7 +40,7 @@ describe("vite-plugin-inspect-react", () => {
       throw new Error("No injected node found")
     }
 
-    const h1Position = `playground/App.tsx:4:7`
-    expect(nearestInjectedNode.id).toContain(h1Position)
+    const expectedHiThereTextPosition = "playground/App.tsx:4:7"
+    expect(nearestInjectedNode.dataset.inspectId).toBe(expectedHiThereTextPosition)
   })
 })
