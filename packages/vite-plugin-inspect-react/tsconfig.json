@@ -1,0 +1,11 @@
+{
+  "extends": "tsconfig/base.json",
+  "exclude": ["dist", "build", "node_modules"],
+  "include": ["src", "test", "vite.config.ts", "./vitest.setup.ts"],
+  "compilerOptions": {
+    "types": ["vitest/importMeta", "vitest/globals"],
+    "lib": ["ESNext", "DOM"],
+    "target": "ESNext",
+    "jsx": "react-jsx"
+  }
+}
