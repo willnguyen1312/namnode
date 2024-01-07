@@ -13,6 +13,12 @@ the flexibility of the component's structure. For instance, some component libra
 to the root component other than their defined set of props. This plugin will help you inspect the component's structure
 by wrapping a tiny hidden span around your component.
 
+## Demo
+
+https://github.com/willnguyen1312/namnode/assets/17794897/cbcad980-fae2-4276-89bf-54a5bb8951ab
+
+
+
 ## Installation 🚀
 
 ```bash
