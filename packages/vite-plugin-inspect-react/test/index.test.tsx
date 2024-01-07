@@ -44,7 +44,7 @@ describe("vite-plugin-inspect-react", () => {
       throw new Error("No injected node found")
     }
 
-    const h1Position = `playground/App.tsx:6:6`
+    const h1Position = `playground/App.tsx:4:7`
     expect(nearestInjectedNode.id).toContain(h1Position)
   })
 })

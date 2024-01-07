@@ -53,7 +53,7 @@ export function inspectReact(
               if (node?.openingElement?.name?.object?.name === "React" || !start || !end || !node?.loc?.start) return
 
               const { column, line } = node.loc.start
-              const injectedContent = `<span hidden id='${id}:${line}:${column}' />`
+              const injectedContent = `<span hidden id='${id}:${line}:${column + 1}' />`
               str.prependLeft(start, `<>${injectedContent}`)
               str.appendRight(end, `</>`)
             }
