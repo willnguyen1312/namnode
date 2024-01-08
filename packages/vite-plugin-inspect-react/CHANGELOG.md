@@ -1,5 +1,11 @@
 # @namnode/vite-plugin-inspect-react
 
+## 1.8.1
+
+### Patch Changes
+
+- [#30](https://github.com/willnguyen1312/namnode/pull/30) [`11908f9`](https://github.com/willnguyen1312/namnode/commit/11908f966c91604aa927614d978ff0729a05b8ad) Thanks [@willnguyen1312](https://github.com/willnguyen1312)! - Fix layout 💞
+
 ## 1.8.0
 
 ### Minor Changes
