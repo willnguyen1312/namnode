@@ -75,3 +75,33 @@ Since the plugin is powered by `@babel/core`, you can pass any Babel plugins. Fo
 
 By default, the plugin will generate a unique `data-inspect-id` for each component with an absolute path. However, you
 can pass a function to format the `data-inspect-id` to your liking.
+
+## Development 🧑‍💻
+
+### Playground
+
+#### From vite-plugin-inspect-react folder
+
+```bash
+pnpm dev
+```
+
+#### From root folder
+
+```bash
+pnpm start-inspect-react
+```
+
+### Test
+
+#### From vite-plugin-inspect-react folder
+
+```bash
+pnpm test
+```
+
+#### From root folder
+
+```bash
+pnpm test-inspect-react
+```
