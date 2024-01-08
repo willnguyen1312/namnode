@@ -1,7 +1,7 @@
 {
   "name": "@namnode/vite-plugin-inspect-react",
   "type": "module",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "description": "A Vite plugin to inspect React components",
   "author": "Nam Nguyen <nam.nguyen.node@gmail.com>",
   "repository": "willnguyen1312/namnode",
