@@ -1,16 +1,11 @@
 import { Node, PluginItem, parseAsync, traverse } from "@babel/core"
 import MagicString from "magic-string"
-import { dirname } from "path"
-import { fileURLToPath } from "url"
 import type { Plugin } from "vite"
-
-// Credit to https://antfu.me/posts/isomorphic-dirname
-const DIRNAME = typeof __dirname !== "undefined" ? __dirname : dirname(fileURLToPath(import.meta.url))
-const rootDirectory = dirname(DIRNAME)
 
 type Options = {
   predicate?: (node: Node) => boolean
   plugins?: PluginItem[]
+  formatDataInspectId?: (id: string) => string
 }
 
 export function inspectReact(
@@ -59,8 +54,8 @@ export function inspectReact(
               if (node?.openingElement?.name?.object?.name === "React" || !start || !end || !node?.loc?.start) return
 
               const { column, line } = node.loc.start
-              const shortId = id.substring(rootDirectory.length + 1)
-              const injectedContent = `<span hidden data-inspect-id='${shortId}:${line}:${column + 1}' />`
+              const finalId = options.formatDataInspectId ? options.formatDataInspectId(id) : id
+              const injectedContent = `<span hidden data-inspect-id='${finalId}:${line}:${column + 1}' />`
               str.prependLeft(start, `<>${injectedContent}`)
               str.appendRight(end, `</>`)
             }

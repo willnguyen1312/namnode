@@ -4,7 +4,9 @@
 
 ### Minor Changes
 
-- [#16](https://github.com/willnguyen1312/namnode/pull/16) [`94b264a`](https://github.com/willnguyen1312/namnode/commit/94b264a80a12e398e45d23fe98fdfcfedee384fc) Thanks [@willnguyen1312](https://github.com/willnguyen1312)! - Improve inspector position 💞
+- [#16](https://github.com/willnguyen1312/namnode/pull/16)
+  [`94b264a`](https://github.com/willnguyen1312/namnode/commit/94b264a80a12e398e45d23fe98fdfcfedee384fc) Thanks
+  [@willnguyen1312](https://github.com/willnguyen1312)! - Improve inspector position 💞
 
 ## 1.2.0
 

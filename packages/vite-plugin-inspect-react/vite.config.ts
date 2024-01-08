@@ -5,7 +5,15 @@ import { inspectReact } from "./src"
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [Inspect(), inspectReact(), react()],
+  plugins: [
+    Inspect(),
+    inspectReact({
+      formatDataInspectId(id) {
+        return id.substring(__dirname.length + 1)
+      },
+    }),
+    react(),
+  ],
   test: {
     environment: "happy-dom",
   },
