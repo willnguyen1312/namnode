@@ -1,19 +1,7 @@
 import { render, screen } from "@testing-library/react"
 import { describe, expect, it } from "vitest"
 import { App } from "../playground/App"
-
-function traverseBottomUp(node: HTMLElement, predicate: (node: HTMLElement) => HTMLElement | null) {
-  let currentNode: Node | null = node
-  while (currentNode) {
-    const found = predicate(currentNode as HTMLElement)
-    if (found) {
-      return found
-    }
-    currentNode = currentNode.parentElement
-  }
-
-  return null
-}
+import { getNearestInjectedNodeBottomUp } from "../src/_internal"
 
 describe("vite-plugin-inspect-react", () => {
   it("should work", () => {
@@ -21,26 +9,13 @@ describe("vite-plugin-inspect-react", () => {
 
     const hiThereText = screen.getByText(/hi there/i)
 
-    const nearestInjectedNode = traverseBottomUp(hiThereText, (node) => {
-      let currentNode = node
-      while (currentNode.previousSibling) {
-        const sib = currentNode.previousSibling as HTMLElement
-
-        if (sib.hasAttribute("hidden") && sib.tagName === "SPAN") {
-          return sib
-        }
-
-        currentNode = sib
-      }
-
-      return null
-    })
+    const nearestInjectedNode = getNearestInjectedNodeBottomUp(hiThereText)
 
     if (!nearestInjectedNode) {
       throw new Error("No injected node found")
     }
 
-    const expectedHiThereTextPosition = "playground/App.tsx:4:7"
-    expect(nearestInjectedNode.dataset.inspectId).toBe(expectedHiThereTextPosition)
+    const expectedHiThereTextPosition = "playground/App.tsx:7:7"
+    expect(nearestInjectedNode.getAttribute("value")).toBe(expectedHiThereTextPosition)
   })
 })
