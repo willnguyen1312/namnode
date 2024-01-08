@@ -1,9 +1,7 @@
 import { Node, PluginItem, parseAsync, traverse } from "@babel/core"
 import MagicString from "magic-string"
 import type { Plugin } from "vite"
-import { getNearestInjectedComponentBottomUp, injectedComponentName, injectedScript } from "./_internal"
-
-export { getNearestInjectedComponentBottomUp, injectedComponentName }
+import { injectedComponentName, injectedScript } from "./_internal"
 
 export type Options = {
   predicate?: (node: Node) => boolean
