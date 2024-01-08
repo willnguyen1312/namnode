@@ -16,7 +16,7 @@ anymore. This plugin helps to overcome that limitation 🎉
 
 ## Demo
 
-https://github.com/willnguyen1312/namnode/assets/17794897/cbcad980-fae2-4276-89bf-54a5bb8951ab
+https://github.com/willnguyen1312/namnode/assets/17794897/6c48b24c-70b5-4ddb-a00f-3a1a5a27eff6
 
 ## Installation 🚀
 
