@@ -18,4 +18,7 @@ export default defineConfig({
     environment: "happy-dom",
     globals: true,
   },
+  server: {
+    open: true,
+  },
 })

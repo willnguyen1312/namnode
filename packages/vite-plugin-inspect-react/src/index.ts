@@ -1,9 +1,11 @@
 import { Node, PluginItem, parseAsync, traverse } from "@babel/core"
 import MagicString from "magic-string"
 import type { Plugin } from "vite"
-import { injectedScript, magicComponentName } from "./_internal"
+import { getNearestInjectedComponentBottomUp, injectedComponentName, injectedScript } from "./_internal"
 
-type Options = {
+export { getNearestInjectedComponentBottomUp, injectedComponentName }
+
+export type Options = {
   predicate?: (node: Node) => boolean
   plugins?: PluginItem[]
   formatDataInspectId?: (id: string) => string
@@ -51,7 +53,11 @@ export function inspectReact(
 
         traverse(ast as Node, {
           enter({ node }) {
-            if (options.predicate && !options.predicate(node)) {
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-expect-error
+            const isReact = node?.openingElement?.name?.object?.name === "React"
+            const customSkip = options.predicate && !options.predicate(node)
+            if (customSkip || isReact) {
               return
             }
 
@@ -59,14 +65,12 @@ export function inspectReact(
               const { start, end } = node
 
               // Make sure all necessary properties exist
-              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-              // @ts-expect-error
-              if (node?.openingElement?.name?.object?.name === "React" || !start || !end || !node?.loc?.start) return
+              if (!start || !end || !node?.loc?.start) return
 
               const { column, line } = node.loc.start
               const finalId = options.formatDataInspectId ? options.formatDataInspectId(id) : id
               const injectedContent = `
-              <${magicComponentName} value='${finalId}:${line}:${column + 1}' />
+              <${injectedComponentName} value='${finalId}:${line}:${column + 1}' />
               `
               str.prependLeft(start, `<>${injectedContent}`)
               str.appendRight(end, `</>`)

@@ -1,4 +1,4 @@
-export const magicComponentName = "inspect-react"
+export const injectedComponentName = "inspect-react"
 
 export const injectedScript = `
 class InspectReactComponent extends HTMLElement {
@@ -7,10 +7,10 @@ class InspectReactComponent extends HTMLElement {
   }
 }
 
-customElements.define('${magicComponentName}', InspectReactComponent);
+customElements.define('${injectedComponentName}', InspectReactComponent);
 `
 
-export function getNearestInjectedNodeBottomUp(node: HTMLElement) {
+export function getNearestInjectedComponentBottomUp(node: HTMLElement) {
   let currentNode: Node | null = node
   while (currentNode) {
     const found = getNearestInjectedNodeFromCurrentNode(currentNode as HTMLElement)
@@ -28,7 +28,7 @@ export function getNearestInjectedNodeFromCurrentNode(node: HTMLElement) {
   while (currentNode.previousSibling) {
     const sib = currentNode.previousSibling as HTMLElement
 
-    if (sib.nodeName.toLocaleLowerCase() === magicComponentName) {
+    if (sib.nodeName.toLocaleLowerCase() === injectedComponentName) {
       return sib
     }
 
