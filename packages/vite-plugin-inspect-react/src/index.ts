@@ -68,7 +68,7 @@ export function inspectReact(
               const { column, line } = node.loc.start
               const finalId = options.formatDataInspectId ? options.formatDataInspectId(id) : id
               const injectedContent = `
-              <${injectedComponentName} value='${finalId}:${line}:${column + 1}' />
+              <${injectedComponentName} hidden value='${finalId}:${line}:${column + 1}' />
               `
               str.prependLeft(start, `<>${injectedContent}`)
               str.appendRight(end, `</>`)
