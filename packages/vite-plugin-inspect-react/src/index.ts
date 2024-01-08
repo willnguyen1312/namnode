@@ -1,6 +1,7 @@
 import { Node, PluginItem, parseAsync, traverse } from "@babel/core"
 import MagicString from "magic-string"
 import type { Plugin } from "vite"
+import { injectedScript, magicComponentName } from "./_internal"
 
 type Options = {
   predicate?: (node: Node) => boolean
@@ -26,6 +27,15 @@ export function inspectReact(
           include: ["react-dom"],
         },
       }
+    },
+
+    transformIndexHtml: {
+      enforce: "pre",
+      transform(html) {
+        // Inject the script to the head
+        html = html.replace("</head>", `<script>${injectedScript}</script></head>`)
+        return html
+      },
     },
 
     transform: async (code, id) => {
@@ -55,7 +65,9 @@ export function inspectReact(
 
               const { column, line } = node.loc.start
               const finalId = options.formatDataInspectId ? options.formatDataInspectId(id) : id
-              const injectedContent = `<span hidden data-inspect-id='${finalId}:${line}:${column + 1}' />`
+              const injectedContent = `
+              <${magicComponentName} value='${finalId}:${line}:${column + 1}' />
+              `
               str.prependLeft(start, `<>${injectedContent}`)
               str.appendRight(end, `</>`)
             }

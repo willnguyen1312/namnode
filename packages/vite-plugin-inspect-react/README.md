@@ -2,16 +2,17 @@
 
 ## WHY 🙈
 
-This plugin will wrap your react components inside your codebase during compile time with hidden span elements that do
-not affect your layout. Yet, those come with unique `data-inspect-id` attributes that store the location of your React
+This plugin will inject custom web components next to your react components inside your codebase during compile time
+that do not affect your layout. Yet, those come with unique `value` attributes that store the location of your React
 components accordingly.
 
 This plugin is highly inspired by another fantastic plugin so-called
 [vite-plugin-react-inspector](https://github.com/sudongyuer/vite-plugin-react-inspector). The reason this plugin exists
-because not all React's component libraries are built with the same structure. To achieve consistency, they sacrifice
-the flexibility of the component's structure. For instance, some component libraries do not allow you to pass any props
-to the root component other than their defined set of props. This plugin will help you inspect the component's structure
-by wrapping a tiny hidden span around your component.
+because not all React's component libraries are built with extensibility in mind. To achieve certain consistency, they
+sacrifice the flexibility of the component's structure. For instance, some component libraries do not allow you to pass
+any props other than their pre-defined set of props. Therefore,
+[dataset property](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset) injection is not an option
+anymore. This plugin helps to overcome that limitation 🎉
 
 ## Demo
 

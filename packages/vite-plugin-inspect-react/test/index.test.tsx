@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react"
 import { describe, expect, it } from "vitest"
 import { App } from "../playground/App"
+import { magicComponentName } from "../src/_internal"
 
 function traverseBottomUp(node: HTMLElement, predicate: (node: HTMLElement) => HTMLElement | null) {
   let currentNode: Node | null = node
@@ -26,7 +27,7 @@ describe("vite-plugin-inspect-react", () => {
       while (currentNode.previousSibling) {
         const sib = currentNode.previousSibling as HTMLElement
 
-        if (sib.hasAttribute("hidden") && sib.tagName === "SPAN") {
+        if (sib.nodeName.toLocaleLowerCase() === magicComponentName) {
           return sib
         }
 
@@ -41,6 +42,6 @@ describe("vite-plugin-inspect-react", () => {
     }
 
     const expectedHiThereTextPosition = "playground/App.tsx:4:7"
-    expect(nearestInjectedNode.dataset.inspectId).toBe(expectedHiThereTextPosition)
+    expect(nearestInjectedNode.getAttribute("value")).toBe(expectedHiThereTextPosition)
   })
 })
