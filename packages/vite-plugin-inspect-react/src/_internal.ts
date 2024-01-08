@@ -1,14 +1,4 @@
-export const injectedComponentName = "inspect-react"
-
-export const injectedScript = `
-class InspectReactComponent extends HTMLElement {
-  constructor() {
-    super();
-  }
-}
-
-customElements.define('${injectedComponentName}', InspectReactComponent);
-`
+export const injectedDataSetProperty = "inspect"
 
 export function getNearestInjectedComponentBottomUp(node: HTMLElement) {
   let currentNode: Node | null = node
@@ -28,7 +18,7 @@ export function getNearestInjectedNodeFromCurrentNode(node: HTMLElement) {
   while (currentNode.previousSibling) {
     const sib = currentNode.previousSibling as HTMLElement
 
-    if (sib.nodeName.toLocaleLowerCase() === injectedComponentName) {
+    if (sib.dataset[injectedDataSetProperty]) {
       return sib
     }
 
