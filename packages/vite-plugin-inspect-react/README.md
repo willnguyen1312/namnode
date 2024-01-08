@@ -54,6 +54,7 @@ export default defineConfig({
 type Options = {
   predicate?: (node: Node) => boolean
   plugins?: PluginItem[]
+  formatDataInspectId?: (id: string) => string
 }
 
 function inspectReact(option?: Options): Plugin
@@ -67,4 +68,9 @@ the nodes that you want to ignore.
 ### plugins
 
 Since the plugin is powered by `@babel/core`, you can pass any Babel plugins. For more information, please refer to
-[Babel's documentation](https://babeljs.io/docs/en/plugins)
+[Babel's documentation](https://babeljs.io/docs/en/plugins).
+
+### formatDataInspectId
+
+By default, the plugin will generate a unique `data-inspect-id` for each component with an absolute path. However, you
+can pass a function to format the `data-inspect-id` to your liking.
