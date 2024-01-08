@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { getNearestInjectedNodeBottomUp } from "../src/_internal"
+import { getNearestInjectedComponentBottomUp } from "../src/_internal"
 
 export function App() {
   return (
@@ -34,7 +34,7 @@ function Inspector() {
       setIsInspecting(false)
       element.style.removeProperty("outline")
 
-      const foundNode = getNearestInjectedNodeBottomUp(element)
+      const foundNode = getNearestInjectedComponentBottomUp(element)
 
       if (!foundNode) {
         setCodePath("")
