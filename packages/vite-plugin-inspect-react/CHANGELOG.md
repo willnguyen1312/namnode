@@ -4,7 +4,9 @@
 
 ### Minor Changes
 
-- [#18](https://github.com/willnguyen1312/namnode/pull/18) [`5dc993d`](https://github.com/willnguyen1312/namnode/commit/5dc993df1ccc3175c8be83eb2caea46b3cdb9345) Thanks [@willnguyen1312](https://github.com/willnguyen1312)! - Simplify data-inspect-id generation 💞
+- [#18](https://github.com/willnguyen1312/namnode/pull/18)
+  [`5dc993d`](https://github.com/willnguyen1312/namnode/commit/5dc993df1ccc3175c8be83eb2caea46b3cdb9345) Thanks
+  [@willnguyen1312](https://github.com/willnguyen1312)! - Simplify data-inspect-id generation 💞
 
 ## 1.3.0
 
