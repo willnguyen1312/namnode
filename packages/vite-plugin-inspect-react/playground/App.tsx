@@ -41,9 +41,7 @@ function Inspector() {
         return
       }
 
-      const codePath = foundNode.getAttribute("value") ?? ""
-      console.log(foundNode)
-
+      const codePath = foundNode.id
       setCodePath(codePath)
     }
 

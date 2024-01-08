@@ -16,6 +16,6 @@ describe("vite-plugin-inspect-react", () => {
     }
 
     const expectedHiThereTextPosition = "playground/App.tsx:7:7"
-    expect(nearestInjectedNode.getAttribute("value")).toBe(expectedHiThereTextPosition)
+    expect(nearestInjectedNode.id).toBe(expectedHiThereTextPosition)
   })
 })

@@ -1,1 +1,1 @@
-export { getNearestInjectedComponentBottomUp, injectedComponentName } from "./_internal"
+export { getNearestInjectedComponentBottomUp } from "./_internal"

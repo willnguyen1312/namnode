@@ -2,8 +2,8 @@
 
 ## WHY 🙈
 
-This plugin will inject custom web components next to your react components inside your codebase during compile time
-that do not affect your layout. Yet, those come with unique `value` attributes that store the location of your React
+This plugin will inject special `span` elements next to your react components inside your codebase during compile time
+that does not affect your layout. Yet, those come with unique `id` attributes that store the location of your React
 components accordingly.
 
 This plugin is highly inspired by another fantastic plugin so-called
