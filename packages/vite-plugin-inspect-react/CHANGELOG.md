@@ -1,5 +1,11 @@
 # @namnode/vite-plugin-inspect-react
 
+## 1.7.1
+
+### Patch Changes
+
+- [#26](https://github.com/willnguyen1312/namnode/pull/26) [`271238e`](https://github.com/willnguyen1312/namnode/commit/271238eb7a4d3e73943d180c4be99dd2fe184824) Thanks [@willnguyen1312](https://github.com/willnguyen1312)! - Fix typing issue 💞
+
 ## 1.7.0
 
 ### Minor Changes
