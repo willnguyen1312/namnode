@@ -1,6 +1,6 @@
 export const injectedDataSetProperty = "inspect"
 
-export function getNearestInjectedComponentTopDown(node: HTMLElement) {
+export function getNearestInjectedComponent(node: HTMLElement) {
   let currentNode: Node | null = node
   while (currentNode) {
     const found = getNearestInjectedNodeFromCurrentNode(currentNode as HTMLElement)
