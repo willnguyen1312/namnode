@@ -1,5 +1,11 @@
 # @namnode/vite-plugin-inspect-react
 
+## 1.10.0
+
+### Minor Changes
+
+- [#34](https://github.com/willnguyen1312/namnode/pull/34) [`5bb0cb6`](https://github.com/willnguyen1312/namnode/commit/5bb0cb6b1a459e7049e42ba653969c33ca1ef018) Thanks [@willnguyen1312](https://github.com/willnguyen1312)! - Switch to sync parse for better performance 💞
+
 ## 1.9.0
 
 ### Minor Changes
