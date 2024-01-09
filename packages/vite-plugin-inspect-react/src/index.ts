@@ -1,4 +1,4 @@
-import { Node, PluginItem, parseAsync, traverse } from "@babel/core"
+import { Node, PluginItem, parse, traverse } from "@babel/core"
 import MagicString from "magic-string"
 import type { Plugin } from "vite"
 import { injectedDataSetProperty } from "./_internal"
@@ -29,10 +29,10 @@ export function inspectReact(
       }
     },
 
-    transform: async (code, id) => {
+    transform: (code, id) => {
       if (id.endsWith(".tsx")) {
         const str = new MagicString(code)
-        const ast = await parseAsync(code, {
+        const ast = parse(code, {
           configFile: false,
           filename: id,
           ast: true,
