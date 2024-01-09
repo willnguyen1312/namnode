@@ -1,6 +1,6 @@
 export const injectedDataSetProperty = "inspect"
 
-export function getNearestInjectedComponentBottomUp(node: HTMLElement) {
+export function getNearestInjectedComponent(node: HTMLElement) {
   let currentNode: Node | null = node
   while (currentNode) {
     const found = getNearestInjectedNodeFromCurrentNode(currentNode as HTMLElement)
@@ -15,8 +15,8 @@ export function getNearestInjectedComponentBottomUp(node: HTMLElement) {
 
 export function getNearestInjectedNodeFromCurrentNode(node: HTMLElement) {
   let currentNode = node
-  while (currentNode.previousSibling) {
-    const sib = currentNode.previousSibling as HTMLElement
+  while (currentNode.nextElementSibling) {
+    const sib = currentNode.nextElementSibling as HTMLElement
 
     if (sib.dataset[injectedDataSetProperty]) {
       return sib

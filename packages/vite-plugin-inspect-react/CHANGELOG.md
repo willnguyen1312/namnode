@@ -4,7 +4,8 @@
 
 ### Patch Changes
 
-- [`864138b`](https://github.com/willnguyen1312/namnode/commit/864138b5c1f2dc0541922c5a9f4a83cf9de1e05e) Thanks [@willnguyen1312](https://github.com/willnguyen1312)! - Fix bug in rendering modal 💞
+- [`864138b`](https://github.com/willnguyen1312/namnode/commit/864138b5c1f2dc0541922c5a9f4a83cf9de1e05e) Thanks
+  [@willnguyen1312](https://github.com/willnguyen1312)! - Fix bug in rendering modal 💞
 
 ## 1.11.0
 
