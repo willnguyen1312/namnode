@@ -1,5 +1,11 @@
 # @namnode/vite-plugin-inspect-react
 
+## 1.12.1
+
+### Patch Changes
+
+- [#42](https://github.com/willnguyen1312/namnode/pull/42) [`a1e289e`](https://github.com/willnguyen1312/namnode/commit/a1e289e341e4ea89310ba6a97ce3fae1b0640a24) Thanks [@willnguyen1312](https://github.com/willnguyen1312)! - Improve library's robustness 💞
+
 ## 1.12.0
 
 ### Minor Changes
