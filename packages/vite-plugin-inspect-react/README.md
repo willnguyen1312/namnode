@@ -50,7 +50,7 @@ export default defineConfig({
 ```
 
 ```ts
-export { getCodePathFromElement, watchInspectedElements } from "@namnode/vite-plugin-inspect-react/utils"
+export { watchInspectedElements } from "@namnode/vite-plugin-inspect-react/utils"
 
 // In root component
 useEffect() => {
