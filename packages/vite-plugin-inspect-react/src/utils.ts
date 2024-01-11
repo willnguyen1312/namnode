@@ -1,1 +1,1 @@
-export { getNearestInjectedComponent } from "./_internal"
+export { getCodePathFromElement, watchInspectedElements } from "./_internal"

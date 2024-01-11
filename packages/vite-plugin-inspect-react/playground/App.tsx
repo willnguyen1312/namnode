@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react"
-import { getNearestInjectedComponent } from "../src/_internal"
+import React, { useEffect, useState } from "react"
+import { getCodePathFromElement, watchInspectedElements } from "../src/_internal"
 
 export function App() {
   return (
@@ -34,15 +34,7 @@ function Inspector() {
       setIsInspecting(false)
       element.style.removeProperty("outline")
 
-      const foundNode = getNearestInjectedComponent(element)
-
-      if (!foundNode) {
-        setCodePath("")
-        return
-      }
-
-      const codePath = foundNode.id
-      setCodePath(codePath)
+      setCodePath(getCodePathFromElement(element))
     }
 
     window.addEventListener("pointerover", handlerPointerOver, true)
@@ -55,6 +47,10 @@ function Inspector() {
       window.removeEventListener("pointerdown", handlerPointerDown, true)
     }
   }, [isInspecting])
+
+  useEffect(() => {
+    return watchInspectedElements()
+  }, [])
 
   return (
     <>

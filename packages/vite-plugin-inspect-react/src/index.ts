@@ -61,8 +61,8 @@ export function inspectReact(
               const injectedContent = `
               <span hidden data-${injectedDataSetProperty} id='${finalId}:${line}:${column + 1}' />
               `
-              str.prependLeft(start, `<>`)
-              str.appendRight(end, `${injectedContent}</>`)
+              str.prependLeft(start, `<>${injectedContent}`)
+              str.appendRight(end, `</>`)
             }
           },
         })

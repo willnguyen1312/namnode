@@ -39,13 +39,9 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "dev": "vite",
     "lint": "eslint \"src/**/*.ts*\"",
-    "preview": "vite preview",
-    "test": "vitest run",
-    "test:watch": "vitest",
-    "test:ui": "vitest --ui"
+    "preview": "vite preview"
   },
   "devDependencies": {
-    "@testing-library/react": "^14.1.2",
     "@types/babel__core": "^7.20.5",
     "@types/react": "^18.2.47",
     "@types/react-dom": "^18.2.18",
@@ -62,8 +58,7 @@
     "tsup": "^8.0.1",
     "typescript": "^5.3.3",
     "vite": "^5.0.11",
-    "vite-plugin-inspect": "^0.8.1",
-    "vitest": "^1.1.3"
+    "vite-plugin-inspect": "^0.8.1"
   },
   "publishConfig": {
     "access": "public"

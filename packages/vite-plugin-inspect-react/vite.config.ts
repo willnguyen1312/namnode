@@ -14,10 +14,6 @@ export default defineConfig({
     }),
     react(),
   ],
-  test: {
-    environment: "happy-dom",
-    globals: true,
-  },
   server: {
     open: true,
   },

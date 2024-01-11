@@ -2,9 +2,9 @@
 
 ## WHY 🙈
 
-This plugin will inject special `span` elements next to your react components inside your codebase during compile time
-that does not affect your layout. Yet, those come with unique `id` attributes that store the location of your React
-components accordingly.
+This plugin will inject special `comment` nodes next to your react components inside your codebase during compile time
+that does not affect your layout. Yet, those come with a unique `nodeValue` property that stores the location of your
+React components accordingly.
 
 This plugin is highly inspired by another fantastic plugin so-called
 [vite-plugin-react-inspector](https://github.com/sudongyuer/vite-plugin-react-inspector). The reason this plugin exists
@@ -49,6 +49,22 @@ export default defineConfig({
 })
 ```
 
+```ts
+export { getCodePathFromElement, watchInspectedElements } from "@namnode/vite-plugin-inspect-react/utils"
+
+// In root component
+useEffect() => {
+  return watchInspectedElements()
+},[])
+```
+
+```ts
+// Retrieve codepath of component which render element in the DOM
+export { getCodePathFromElement } from "@namnode/vite-plugin-inspect-react/utils"
+
+const codePath = getCodePathFromElement(element)
+```
+
 ## Options 🎨
 
 ```ts
@@ -90,18 +106,4 @@ pnpm dev
 
 ```bash
 pnpm start-inspect-react
-```
-
-### Test
-
-#### From vite-plugin-inspect-react folder
-
-```bash
-pnpm test
-```
-
-#### From root folder
-
-```bash
-pnpm test-inspect-react
 ```
