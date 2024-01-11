@@ -15,8 +15,8 @@ export function getCodePathFromElement(node: HTMLElement): string {
 
 export function getNearestInjectedNodeFromCurrentNode(node: HTMLElement) {
   let currentNode = node
-  while (currentNode.previousSibling) {
-    const sib = currentNode.previousSibling as HTMLElement
+  while (currentNode.nextSibling) {
+    const sib = currentNode.nextSibling as HTMLElement
 
     if (sib instanceof Comment) {
       return sib.nodeValue
@@ -28,25 +28,11 @@ export function getNearestInjectedNodeFromCurrentNode(node: HTMLElement) {
   return null
 }
 
-function switchSpanToHtmlComment() {
+export function switchSpanToHtmlComment() {
   const allSpan = document.querySelectorAll(`span[data-${injectedDataSetProperty}]`)
 
   allSpan.forEach((span) => {
     const comment = document.createComment(span.id)
     span.replaceWith(comment)
   })
-}
-
-export function watchInspectedElements() {
-  switchSpanToHtmlComment()
-  const observer = new MutationObserver(switchSpanToHtmlComment)
-
-  observer.observe(document.body, {
-    childList: true,
-    subtree: true,
-  })
-
-  return () => {
-    observer.disconnect()
-  }
 }

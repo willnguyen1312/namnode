@@ -2,9 +2,10 @@
 
 ## WHY 🙈
 
-This plugin will inject special `comment` nodes next to your react components inside your codebase during compile time
-that does not affect your layout. Yet, those come with a unique `nodeValue` property that stores the location of your
-React components accordingly.
+This plugin will inject special `span` nodes next to your react components inside your codebase during compile time.
+Yet, those come with a unique `id` property that stores the location of your React components accordingly. Due to
+React's limited nature, it's impossible to render HTML comments in the DOM. We need to swap those `span` nodes with HTML
+comments during runtime. This plugin provides a utility to do that for you.
 
 This plugin is highly inspired by another fantastic plugin so-called
 [vite-plugin-react-inspector](https://github.com/sudongyuer/vite-plugin-react-inspector). The reason this plugin exists
@@ -50,16 +51,14 @@ export default defineConfig({
 ```
 
 ```ts
-import { watchInspectedElements } from "@namnode/vite-plugin-inspect-react/utils"
+import { switchSpanToHtmlComment } from "@namnode/vite-plugin-inspect-react/utils"
 
-// In root component
-useEffect(() => {
-  return watchInspectedElements();
-}, []);
+// Call it whenever your app are ready to inspect
+switchSpanToHtmlComment()
 ```
 
 ```ts
-// Retrieve codepath of component which render element in the DOM
+// Retrieve code path of component which render element in the DOM
 import { getCodePathFromElement } from "@namnode/vite-plugin-inspect-react/utils"
 
 const codePath = getCodePathFromElement(element)

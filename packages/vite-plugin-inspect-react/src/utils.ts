@@ -1,1 +1,1 @@
-export { getCodePathFromElement, watchInspectedElements } from "./_internal"
+export { getCodePathFromElement, switchSpanToHtmlComment } from "./_internal"
