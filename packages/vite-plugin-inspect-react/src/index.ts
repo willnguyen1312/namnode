@@ -58,8 +58,9 @@ export function inspectReact(
 
               const { column, line } = node.loc.start
               const finalId = options.formatDataInspectId ? options.formatDataInspectId(id) : id
+              const codePath = `${finalId}:${line}:${column + 1}`
               const injectedContent = `
-              <span hidden data-${injectedDataSetProperty} id='${finalId}:${line}:${column + 1}' />
+              <span hidden data-${injectedDataSetProperty} id='${codePath}' key='${codePath}' />
               `
               str.prependLeft(start, `<>`)
               str.appendRight(end, `${injectedContent}</>`)
