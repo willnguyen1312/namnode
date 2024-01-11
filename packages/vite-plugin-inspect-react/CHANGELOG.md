@@ -1,5 +1,11 @@
 # @namnode/vite-plugin-inspect-react
 
+## 1.12.0
+
+### Minor Changes
+
+- [`4c4691f`](https://github.com/willnguyen1312/namnode/commit/4c4691f67850c00158d652bb7b0fcee53fc58960) Thanks [@willnguyen1312](https://github.com/willnguyen1312)! - Avoid breaking UI by updating span to comment nodes 💞
+
 ## 1.11.1
 
 ### Patch Changes
