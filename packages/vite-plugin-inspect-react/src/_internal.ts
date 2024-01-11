@@ -18,21 +18,12 @@ export function getNearestInjectedNodeFromCurrentNode(node: HTMLElement) {
   while (currentNode.nextSibling) {
     const sib = currentNode.nextSibling as HTMLElement
 
-    if (sib instanceof Comment) {
-      return sib.nodeValue
+    if (sib.dataset[injectedDataSetProperty]) {
+      return sib.dataset[injectedDataSetProperty]
     }
 
     currentNode = sib
   }
 
   return null
-}
-
-export function switchSpanToHtmlComment() {
-  const allSpan = document.querySelectorAll(`span[data-${injectedDataSetProperty}]`)
-
-  allSpan.forEach((span) => {
-    const comment = document.createComment(span.id)
-    span.replaceWith(comment)
-  })
 }

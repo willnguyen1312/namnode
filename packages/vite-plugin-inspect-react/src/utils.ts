@@ -1,1 +1,1 @@
-export { getCodePathFromElement, switchSpanToHtmlComment } from "./_internal"
+export { getCodePathFromElement } from "./_internal"

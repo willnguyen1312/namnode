@@ -3,9 +3,7 @@
 ## WHY 🙈
 
 This plugin will inject special `span` nodes next to your react components inside your codebase during compile time.
-Yet, those come with a unique `id` property that stores the location of your React components accordingly. Due to
-React's limited nature, it's impossible to render HTML comments in the DOM. We need to swap those `span` nodes with HTML
-comments during runtime. This plugin provides a utility to do that for you.
+Yet, those come with a unique `data-inspect` property that stores the location of your React components accordingly.
 
 This plugin is highly inspired by another fantastic plugin so-called
 [vite-plugin-react-inspector](https://github.com/sudongyuer/vite-plugin-react-inspector). The reason this plugin exists
@@ -48,13 +46,6 @@ import { inspectReact } from "@namnode/vite-plugin-inspect-react"
 export default defineConfig({
   plugins: [inspectReact(), react()],
 })
-```
-
-```ts
-import { switchSpanToHtmlComment } from "@namnode/vite-plugin-inspect-react/utils"
-
-// Call it whenever your app are ready to inspect
-switchSpanToHtmlComment()
 ```
 
 ```ts

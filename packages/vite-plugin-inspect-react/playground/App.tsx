@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { getCodePathFromElement, switchSpanToHtmlComment } from "../src/_internal"
+import { getCodePathFromElement } from "../src/_internal"
 
 export function App() {
   return (
@@ -52,7 +52,6 @@ function Inspector() {
     <>
       <button
         onClick={() => {
-          switchSpanToHtmlComment()
           setIsInspecting(!isInspecting)
         }}
       >
