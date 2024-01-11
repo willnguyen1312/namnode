@@ -53,9 +53,9 @@ export default defineConfig({
 export { watchInspectedElements } from "@namnode/vite-plugin-inspect-react/utils"
 
 // In root component
-useEffect() => {
-  return watchInspectedElements()
-},[])
+useEffect(() => {
+  return watchInspectedElements();
+}, []);
 ```
 
 ```ts
