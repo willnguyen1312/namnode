@@ -4,7 +4,8 @@
 
 ### Minor Changes
 
-- [`14340ac`](https://github.com/willnguyen1312/namnode/commit/14340ac035a40c28d93069c9e441ecdc7a14dc40) Thanks [@willnguyen1312](https://github.com/willnguyen1312)! - Embrace dataset attribute 💞
+- [`14340ac`](https://github.com/willnguyen1312/namnode/commit/14340ac035a40c28d93069c9e441ecdc7a14dc40) Thanks
+  [@willnguyen1312](https://github.com/willnguyen1312)! - Embrace dataset attribute 💞
 
 ## 1.12.2
 
