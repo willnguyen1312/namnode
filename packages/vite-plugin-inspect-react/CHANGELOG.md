@@ -1,5 +1,11 @@
 # @namnode/vite-plugin-inspect-react
 
+## 1.15.0
+
+### Minor Changes
+
+- [#48](https://github.com/willnguyen1312/namnode/pull/48) [`cfef104`](https://github.com/willnguyen1312/namnode/commit/cfef104c4a93607a76e6331251b09189a37b549d) Thanks [@willnguyen1312](https://github.com/willnguyen1312)! - Add propName option 💞
+
 ## 1.14.0
 
 ### Minor Changes
