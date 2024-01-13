@@ -4,7 +4,9 @@
 
 ### Minor Changes
 
-- [#46](https://github.com/willnguyen1312/namnode/pull/46) [`7be7a32`](https://github.com/willnguyen1312/namnode/commit/7be7a327102e3701eb56a9a0aec063140389f775) Thanks [@willnguyen1312](https://github.com/willnguyen1312)! - Add devtool mode 💞
+- [#46](https://github.com/willnguyen1312/namnode/pull/46)
+  [`7be7a32`](https://github.com/willnguyen1312/namnode/commit/7be7a327102e3701eb56a9a0aec063140389f775) Thanks
+  [@willnguyen1312](https://github.com/willnguyen1312)! - Add devtool mode 💞
 
 ## 1.13.0
 
