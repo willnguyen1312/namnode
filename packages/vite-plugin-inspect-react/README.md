@@ -2,8 +2,9 @@
 
 ## WHY 🙈
 
-This plugin will inject special `span` nodes next to your react components inside your codebase during compile time.
-Yet, those come with a unique `data-inspect` property that stores the location of your React components accordingly.
+This plugin will inject special hidden `span` nodes next to your react components inside your codebase during compile
+time. Yet, those come with a unique `data-inspect` property that stores the location of your React components
+accordingly (due to the fact that we cannot render HTML comments in JSX 🙈)
 
 This plugin is highly inspired by another fantastic plugin so-called
 [vite-plugin-react-inspector](https://github.com/sudongyuer/vite-plugin-react-inspector). The reason this plugin exists
@@ -12,6 +13,9 @@ sacrifice the flexibility of the component's structure. For instance, some compo
 any props other than their pre-defined set of props. Therefore,
 [dataset property](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset) injection is not an option
 anymore. This plugin helps to overcome that limitation 🎉
+
+React's dev tool does have a feature to inspect the component's location, but it is not as accurate at scale in my
+experience. Therefore, I recommend you try out this plugin only when the React dev tool is not enough for your use case.
 
 ## Demo
 
@@ -62,6 +66,7 @@ type Options = {
   predicate?: (node: Node) => boolean
   plugins?: PluginItem[]
   formatDataInspectId?: (id: string) => string
+  type: "devtool" | "dom"
 }
 
 function inspectReact(option?: Options): Plugin

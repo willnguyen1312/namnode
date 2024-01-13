@@ -1,19 +1,36 @@
 import { Node, PluginItem, parse, traverse } from "@babel/core"
+import type { JSXIdentifier, JSXMemberExpression } from "@babel/types"
 import MagicString from "magic-string"
 import type { Plugin } from "vite"
 import { injectedDataSetProperty } from "./_internal"
+
+type InspecType = "devtool" | "dom"
 
 export type Options = {
   predicate?: (node: Node) => boolean
   plugins?: PluginItem[]
   formatDataInspectId?: (id: string) => string
+  type?: InspecType
 }
 
-export function inspectReact(
-  options: Options = {
-    plugins: [],
-  },
-): Plugin {
+// Credit to https://github.com/sudongyuer/vite-plugin-react-inspector/blob/1f4284ebae2ca7001aff5be4619cd53be49ed862/packages/vite-plugin-react-inspector/src/utils/index.ts#L1-L9
+function parseJSXIdentifier(name: JSXIdentifier | JSXMemberExpression): string {
+  if (name.type === "JSXIdentifier") {
+    return name.name
+  }
+
+  return `${parseJSXIdentifier(name.object)}.${parseJSXIdentifier(name.property)}`
+}
+
+export function inspectReact(options: Options): Plugin {
+  if (!options.type) {
+    options.type = "devtool"
+  }
+
+  if (!options.plugins) {
+    options.plugins = []
+  }
+
   return {
     name: "vite-plugin-inspect-react",
 
@@ -59,11 +76,21 @@ export function inspectReact(
               const { column, line } = node.loc.start
               const finalId = options.formatDataInspectId ? options.formatDataInspectId(id) : id
               const codePath = `${finalId}:${line}:${column + 1}`
-              const injectedContent = `
-              <span hidden data-${injectedDataSetProperty}='${codePath}' />
-              `
-              str.prependLeft(start, `<>`)
-              str.appendRight(end, `${injectedContent}</>`)
+
+              if (options.type === "dom") {
+                const injectedContent = `
+                <span hidden data-${injectedDataSetProperty}='${codePath}' />
+                `
+                str.prependLeft(start, `<>`)
+                str.appendRight(end, `${injectedContent}</>`)
+              }
+
+              if (options.type === "devtool") {
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                const toInsertPosition = start + parseJSXIdentifier(node.openingElement.name as any).length + 1
+                const content = ` code-path='${codePath}'`
+                str.appendLeft(toInsertPosition, content)
+              }
             }
           },
         })
