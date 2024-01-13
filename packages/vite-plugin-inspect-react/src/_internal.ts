@@ -27,3 +27,5 @@ export function getNearestInjectedNodeFromCurrentNode(node: HTMLElement) {
 
   return null
 }
+
+export const propName = "a-code-path"

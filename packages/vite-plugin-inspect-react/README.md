@@ -66,7 +66,8 @@ type Options = {
   predicate?: (node: Node) => boolean
   plugins?: PluginItem[]
   formatDataInspectId?: (id: string) => string
-  type: "devtool" | "dom"
+  type?: "devtool" | "dom"
+  propName?: string
 }
 
 function inspectReact(option?: Options): Plugin

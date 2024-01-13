@@ -2,7 +2,7 @@ import { Node, PluginItem, parse, traverse } from "@babel/core"
 import type { JSXIdentifier, JSXMemberExpression } from "@babel/types"
 import MagicString from "magic-string"
 import type { Plugin } from "vite"
-import { injectedDataSetProperty } from "./_internal"
+import { injectedDataSetProperty, propName } from "./_internal"
 
 type InspecType = "devtool" | "dom"
 
@@ -11,6 +11,7 @@ export type Options = {
   plugins?: PluginItem[]
   formatDataInspectId?: (id: string) => string
   type?: InspecType
+  propName?: string
 }
 
 // Credit to https://github.com/sudongyuer/vite-plugin-react-inspector/blob/1f4284ebae2ca7001aff5be4619cd53be49ed862/packages/vite-plugin-react-inspector/src/utils/index.ts#L1-L9
@@ -29,6 +30,10 @@ export function inspectReact(options: Options): Plugin {
 
   if (!options.plugins) {
     options.plugins = []
+  }
+
+  if (!options.propName) {
+    options.propName = propName
   }
 
   return {
@@ -88,7 +93,7 @@ export function inspectReact(options: Options): Plugin {
               if (options.type === "devtool") {
                 // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 const toInsertPosition = start + parseJSXIdentifier(node.openingElement.name as any).length + 1
-                const content = ` code-path='${codePath}'`
+                const content = ` ${options.propName}='${codePath}'`
                 str.appendLeft(toInsertPosition, content)
               }
             }
