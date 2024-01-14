@@ -1,5 +1,11 @@
 # @namnode/vite-plugin-inspect-react
 
+## 1.16.8
+
+### Patch Changes
+
+- [`0e40b65`](https://github.com/willnguyen1312/namnode/commit/0e40b65996ce3f8fec4c594473c8560fdec240ae) Thanks [@willnguyen1312](https://github.com/willnguyen1312)! - Add double quote around injected prop value 💞
+
 ## 1.16.7
 
 ### Patch Changes
