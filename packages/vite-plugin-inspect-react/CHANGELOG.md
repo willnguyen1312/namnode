@@ -4,13 +4,15 @@
 
 ### Patch Changes
 
-- [`0e40b65`](https://github.com/willnguyen1312/namnode/commit/0e40b65996ce3f8fec4c594473c8560fdec240ae) Thanks [@willnguyen1312](https://github.com/willnguyen1312)! - Add double quote around injected prop value 💞
+- [`0e40b65`](https://github.com/willnguyen1312/namnode/commit/0e40b65996ce3f8fec4c594473c8560fdec240ae) Thanks
+  [@willnguyen1312](https://github.com/willnguyen1312)! - Add double quote around injected prop value 💞
 
 ## 1.16.7
 
 ### Patch Changes
 
-- [`dcc427c`](https://github.com/willnguyen1312/namnode/commit/dcc427cceb16ecdf968652534263c9be59112ec5) Thanks [@willnguyen1312](https://github.com/willnguyen1312)! - Fix README 💞
+- [`dcc427c`](https://github.com/willnguyen1312/namnode/commit/dcc427cceb16ecdf968652534263c9be59112ec5) Thanks
+  [@willnguyen1312](https://github.com/willnguyen1312)! - Fix README 💞
 
 ## 1.16.6
 
