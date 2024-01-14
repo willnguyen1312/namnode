@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react"
+import React, { useEffect, useRef } from "react"
 
 export function ReactInjectedComment(props: { children: string }) {
   const ref = useRef<HTMLSpanElement>(null)
