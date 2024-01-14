@@ -1,5 +1,11 @@
 # @namnode/vite-plugin-inspect-react
 
+## 1.16.0
+
+### Minor Changes
+
+- [#50](https://github.com/willnguyen1312/namnode/pull/50) [`0d4cf30`](https://github.com/willnguyen1312/namnode/commit/0d4cf30c3937809d98babc4b954e32ce3618bab3) Thanks [@willnguyen1312](https://github.com/willnguyen1312)! - Embrace HTML comments 💞
+
 ## 1.15.0
 
 ### Minor Changes
