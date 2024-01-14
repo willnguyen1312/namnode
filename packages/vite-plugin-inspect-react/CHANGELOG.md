@@ -4,19 +4,22 @@
 
 ### Patch Changes
 
-- [`8c983ad`](https://github.com/willnguyen1312/namnode/commit/8c983adf5c5cf2f738f69b0611b793713bf3720a) Thanks [@willnguyen1312](https://github.com/willnguyen1312)! - Remove setTimeout workaround 💞
+- [`8c983ad`](https://github.com/willnguyen1312/namnode/commit/8c983adf5c5cf2f738f69b0611b793713bf3720a) Thanks
+  [@willnguyen1312](https://github.com/willnguyen1312)! - Remove setTimeout workaround 💞
 
 ## 1.16.3
 
 ### Patch Changes
 
-- [`17822b2`](https://github.com/willnguyen1312/namnode/commit/17822b28e493510c251f0fb519f30b9ec327245a) Thanks [@willnguyen1312](https://github.com/willnguyen1312)! - Try to fix with timeout 🚀
+- [`17822b2`](https://github.com/willnguyen1312/namnode/commit/17822b28e493510c251f0fb519f30b9ec327245a) Thanks
+  [@willnguyen1312](https://github.com/willnguyen1312)! - Try to fix with timeout 🚀
 
 ## 1.16.2
 
 ### Patch Changes
 
-- [`b9080b4`](https://github.com/willnguyen1312/namnode/commit/b9080b43f028c1e80b67b6d46eaff544fef41bd5) Thanks [@willnguyen1312](https://github.com/willnguyen1312)! - Avoid naming collision 💞
+- [`b9080b4`](https://github.com/willnguyen1312/namnode/commit/b9080b43f028c1e80b67b6d46eaff544fef41bd5) Thanks
+  [@willnguyen1312](https://github.com/willnguyen1312)! - Avoid naming collision 💞
 
 ## 1.16.1
 

@@ -25,7 +25,7 @@ function parseJSXIdentifier(name: JSXIdentifier | JSXMemberExpression): string {
 
 export function inspectReact(options: Options): Plugin {
   if (!options.type) {
-    options.type = "dom"
+    options.type = "devtool"
   }
 
   if (!options.plugins) {
