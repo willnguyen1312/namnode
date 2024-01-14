@@ -2,9 +2,8 @@
 
 ## WHY 🙈
 
-This plugin will inject special hidden `span` nodes next to your react components inside your codebase during compile
-time. Yet, those come with a unique `data-inspect` property that stores the location of your React components
-accordingly (due to the fact that we cannot render HTML comments in JSX 🙈)
+This plugin will inject special `comment` nodes next to your react components inside your codebase during compile time.
+Yet, those come with unique content that stores the location of your React components accordingly
 
 This plugin is highly inspired by another fantastic plugin so-called
 [vite-plugin-react-inspector](https://github.com/sudongyuer/vite-plugin-react-inspector). The reason this plugin exists

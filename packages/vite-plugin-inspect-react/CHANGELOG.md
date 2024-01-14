@@ -4,13 +4,15 @@
 
 ### Patch Changes
 
-- [`583714e`](https://github.com/willnguyen1312/namnode/commit/583714eb5c46e9d623876c13ef99f1aac6b89c19) Thanks [@willnguyen1312](https://github.com/willnguyen1312)! - Make devtool as default mode 💞
+- [`583714e`](https://github.com/willnguyen1312/namnode/commit/583714eb5c46e9d623876c13ef99f1aac6b89c19) Thanks
+  [@willnguyen1312](https://github.com/willnguyen1312)! - Make devtool as default mode 💞
 
 ## 1.16.5
 
 ### Patch Changes
 
-- [`fdcfc14`](https://github.com/willnguyen1312/namnode/commit/fdcfc1408a02ad0afbb955ffd0fc68cdc662002f) Thanks [@willnguyen1312](https://github.com/willnguyen1312)! - Fix dom mode 💞
+- [`fdcfc14`](https://github.com/willnguyen1312/namnode/commit/fdcfc1408a02ad0afbb955ffd0fc68cdc662002f) Thanks
+  [@willnguyen1312](https://github.com/willnguyen1312)! - Fix dom mode 💞
 
 ## 1.16.4
 
