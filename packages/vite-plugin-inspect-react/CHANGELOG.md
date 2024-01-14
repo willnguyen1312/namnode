@@ -1,5 +1,11 @@
 # @namnode/vite-plugin-inspect-react
 
+## 1.17.0
+
+### Minor Changes
+
+- [#60](https://github.com/willnguyen1312/namnode/pull/60) [`0841a7b`](https://github.com/willnguyen1312/namnode/commit/0841a7b37fd2162397fb3defd4820df44ce420ec) Thanks [@willnguyen1312](https://github.com/willnguyen1312)! - Handle generic JSX components 💞
+
 ## 1.16.8
 
 ### Patch Changes
