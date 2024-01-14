@@ -1,5 +1,11 @@
 # @namnode/vite-plugin-inspect-react
 
+## 1.16.4
+
+### Patch Changes
+
+- [`8c983ad`](https://github.com/willnguyen1312/namnode/commit/8c983adf5c5cf2f738f69b0611b793713bf3720a) Thanks [@willnguyen1312](https://github.com/willnguyen1312)! - Remove setTimeout workaround 💞
+
 ## 1.16.3
 
 ### Patch Changes
