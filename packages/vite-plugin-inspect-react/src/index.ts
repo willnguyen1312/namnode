@@ -101,18 +101,13 @@ export function inspectReact(options: Options): Plugin {
               if (options.type === "devtool") {
                 // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 let toInsertPosition = start + parseJSXIdentifier(node.openingElement.name as any).length + 1
-                let nextChar = code[toInsertPosition]
 
                 // Handle generic JSX elements like <Component<T> />
-                if (nextChar === "<") {
-                  while (nextChar !== ">") {
-                    toInsertPosition++
-                    nextChar = code[toInsertPosition]
-                  }
-                  toInsertPosition++
+                if (code[toInsertPosition] === "<") {
+                  toInsertPosition = code.indexOf(">", toInsertPosition) + 1
                 }
 
-                const content = ` ${options.propName}="${codePath}"`
+                const content = ` ${options.propName}='${codePath}'`
                 str.appendLeft(toInsertPosition, content)
               }
             }
