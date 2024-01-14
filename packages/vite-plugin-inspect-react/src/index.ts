@@ -60,7 +60,7 @@ export function inspectReact(options: Options): Plugin {
         //   str.appendLeft(0, `import { Comment } from './Comment'\n`)
         // }
 
-        str.appendLeft(0, `import { Comment } from '@namnode/vite-plugin-inspect-react/utils'\n`)
+        str.appendLeft(0, `import { Comment } from '@namnode/vite-plugin-inspect-react/Comment'\n`)
 
         const ast = parse(code, {
           configFile: false,
