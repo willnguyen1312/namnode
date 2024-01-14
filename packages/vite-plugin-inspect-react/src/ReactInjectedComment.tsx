@@ -7,9 +7,7 @@ export function ReactInjectedComment(props: { children: string }) {
     const element = ref.current
 
     if (element) {
-      setTimeout(() => {
-        element.parentElement?.replaceChild(document.createComment(props.children), element)
-      }, 1000)
+      element.parentElement?.replaceChild(document.createComment(props.children), element)
     }
   }, [])
 
