@@ -1,5 +1,11 @@
 # @namnode/vite-plugin-inspect-react
 
+## 1.16.2
+
+### Patch Changes
+
+- [`b9080b4`](https://github.com/willnguyen1312/namnode/commit/b9080b43f028c1e80b67b6d46eaff544fef41bd5) Thanks [@willnguyen1312](https://github.com/willnguyen1312)! - Avoid naming collision 💞
+
 ## 1.16.1
 
 ### Patch Changes
