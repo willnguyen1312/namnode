@@ -1,5 +1,3 @@
-export const injectedDataSetProperty = "inspect"
-
 export function getCodePathFromElement(node: HTMLElement): string {
   let currentNode: Node | null = node
   while (currentNode) {
@@ -18,8 +16,8 @@ export function getNearestInjectedNodeFromCurrentNode(node: HTMLElement) {
   while (currentNode.nextSibling) {
     const sib = currentNode.nextSibling as HTMLElement
 
-    if (sib.dataset[injectedDataSetProperty]) {
-      return sib.dataset[injectedDataSetProperty]
+    if (sib instanceof Comment) {
+      return sib.textContent
     }
 
     currentNode = sib

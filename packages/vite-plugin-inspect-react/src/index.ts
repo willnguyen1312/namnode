@@ -2,7 +2,7 @@ import { Node, PluginItem, parse, traverse } from "@babel/core"
 import type { JSXIdentifier, JSXMemberExpression } from "@babel/types"
 import MagicString from "magic-string"
 import type { Plugin } from "vite"
-import { injectedDataSetProperty, propName } from "./_internal"
+import { propName } from "./_internal"
 
 type InspecType = "devtool" | "dom"
 
@@ -25,7 +25,7 @@ function parseJSXIdentifier(name: JSXIdentifier | JSXMemberExpression): string {
 
 export function inspectReact(options: Options): Plugin {
   if (!options.type) {
-    options.type = "devtool"
+    options.type = "dom"
   }
 
   if (!options.plugins) {
@@ -54,6 +54,14 @@ export function inspectReact(options: Options): Plugin {
     transform: (code, id) => {
       if (id.endsWith(".tsx")) {
         const str = new MagicString(code)
+
+        // const isCommentFile = id.includes("Comment")
+        // if (!isCommentFile) {
+        //   str.appendLeft(0, `import { Comment } from './Comment'\n`)
+        // }
+
+        str.appendLeft(0, `import { Comment } from '@namnode/vite-plugin-inspect-react/utils'\n`)
+
         const ast = parse(code, {
           configFile: false,
           filename: id,
@@ -69,6 +77,7 @@ export function inspectReact(options: Options): Plugin {
             const isReact = node?.openingElement?.name?.object?.name === "React"
             const customSkip = options.predicate && !options.predicate(node)
             if (customSkip || isReact) {
+              // if (customSkip || isReact || isCommentFile) {
               return
             }
 
@@ -84,7 +93,7 @@ export function inspectReact(options: Options): Plugin {
 
               if (options.type === "dom") {
                 const injectedContent = `
-                <span hidden data-${injectedDataSetProperty}='${codePath}' />
+                <Comment>${codePath}</Comment>
                 `
                 str.prependLeft(start, `<>`)
                 str.appendRight(end, `${injectedContent}</>`)
