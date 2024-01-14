@@ -1,5 +1,11 @@
 # @namnode/vite-plugin-inspect-react
 
+## 1.16.1
+
+### Patch Changes
+
+- [`acc3d1e`](https://github.com/willnguyen1312/namnode/commit/acc3d1e0685917f0f26860130f5493c1a6e2fc26) Thanks [@willnguyen1312](https://github.com/willnguyen1312)! - Fix imported Comment component 💞
+
 ## 1.16.0
 
 ### Minor Changes
