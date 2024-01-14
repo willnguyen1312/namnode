@@ -27,10 +27,10 @@
       "require": "./dist/utils.cjs",
       "types": "./dist/utils.d.ts"
     },
-    "./Comment": {
-      "import": "./dist/Comment.js",
-      "require": "./dist/Comment.cjs",
-      "types": "./dist/Comment.d.ts"
+    "./ReactInjectedComment": {
+      "import": "./dist/ReactInjectedComment.js",
+      "require": "./dist/ReactInjectedComment.cjs",
+      "types": "./dist/ReactInjectedComment.d.ts"
     }
   },
   "sideEffects": false,

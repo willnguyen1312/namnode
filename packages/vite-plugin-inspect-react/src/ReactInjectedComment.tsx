@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react"
 
-export function Comment(props: { children: string }) {
+export function ReactInjectedComment(props: { children: string }) {
   const ref = useRef<HTMLSpanElement>(null)
 
   useEffect(() => {
@@ -13,3 +13,5 @@ export function Comment(props: { children: string }) {
 
   return <span hidden ref={ref} />
 }
+
+ReactInjectedComment.displayName = "ReactInjectedComment"

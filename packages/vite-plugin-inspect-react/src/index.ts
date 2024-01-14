@@ -60,7 +60,10 @@ export function inspectReact(options: Options): Plugin {
         //   str.appendLeft(0, `import { Comment } from './Comment'\n`)
         // }
 
-        str.appendLeft(0, `import { Comment } from '@namnode/vite-plugin-inspect-react/Comment'\n`)
+        str.appendLeft(
+          0,
+          `import { ReactInjectedComment } from '@namnode/vite-plugin-inspect-react/ReactInjectedComment'\n`,
+        )
 
         const ast = parse(code, {
           configFile: false,
@@ -93,7 +96,7 @@ export function inspectReact(options: Options): Plugin {
 
               if (options.type === "dom") {
                 const injectedContent = `
-                <Comment>${codePath}</Comment>
+                <ReactInjectedComment>${codePath}</ReactInjectedComment>
                 `
                 str.prependLeft(start, `<>`)
                 str.appendRight(end, `${injectedContent}</>`)
