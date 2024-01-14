@@ -1,5 +1,11 @@
 # @namnode/vite-plugin-inspect-react
 
+## 1.16.5
+
+### Patch Changes
+
+- [`fdcfc14`](https://github.com/willnguyen1312/namnode/commit/fdcfc1408a02ad0afbb955ffd0fc68cdc662002f) Thanks [@willnguyen1312](https://github.com/willnguyen1312)! - Fix dom mode 💞
+
 ## 1.16.4
 
 ### Patch Changes
