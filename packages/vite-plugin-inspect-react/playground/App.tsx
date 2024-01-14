@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from "react"
 import { getCodePathFromElement } from "../src/_internal"
 
+function GenericComponent<T extends "foo">(props: { type: T }) {
+  return <div>Hello there: {props.type}</div>
+}
+
 export function App() {
   return (
     <>
       <h1>Hi there 💞</h1>
       <Inspector />
+      <GenericComponent<"foo"> type="foo" />
     </>
   )
 }

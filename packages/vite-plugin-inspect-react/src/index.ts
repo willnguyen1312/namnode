@@ -55,11 +55,6 @@ export function inspectReact(options: Options): Plugin {
       if (id.endsWith(".tsx")) {
         const str = new MagicString(code)
 
-        // const isCommentFile = id.includes("Comment")
-        // if (!isCommentFile) {
-        //   str.appendLeft(0, `import { Comment } from './Comment'\n`)
-        // }
-
         if (options.type === "dom") {
           str.appendLeft(
             0,
@@ -82,7 +77,6 @@ export function inspectReact(options: Options): Plugin {
             const isReact = node?.openingElement?.name?.object?.name === "React"
             const customSkip = options.predicate && !options.predicate(node)
             if (customSkip || isReact) {
-              // if (customSkip || isReact || isCommentFile) {
               return
             }
 
@@ -106,7 +100,18 @@ export function inspectReact(options: Options): Plugin {
 
               if (options.type === "devtool") {
                 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                const toInsertPosition = start + parseJSXIdentifier(node.openingElement.name as any).length + 1
+                let toInsertPosition = start + parseJSXIdentifier(node.openingElement.name as any).length + 1
+                let nextChar = code[toInsertPosition]
+
+                // Handle generic JSX elements like <Component<T> />
+                if (nextChar === "<") {
+                  while (nextChar !== ">") {
+                    toInsertPosition++
+                    nextChar = code[toInsertPosition]
+                  }
+                  toInsertPosition++
+                }
+
                 const content = ` ${options.propName}="${codePath}"`
                 str.appendLeft(toInsertPosition, content)
               }
