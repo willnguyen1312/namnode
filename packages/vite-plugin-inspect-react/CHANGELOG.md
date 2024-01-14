@@ -1,5 +1,11 @@
 # @namnode/vite-plugin-inspect-react
 
+## 1.16.3
+
+### Patch Changes
+
+- [`17822b2`](https://github.com/willnguyen1312/namnode/commit/17822b28e493510c251f0fb519f30b9ec327245a) Thanks [@willnguyen1312](https://github.com/willnguyen1312)! - Try to fix with timeout 🚀
+
 ## 1.16.2
 
 ### Patch Changes
