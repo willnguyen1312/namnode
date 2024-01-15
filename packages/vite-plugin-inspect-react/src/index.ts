@@ -27,7 +27,7 @@ function parseJSXIdentifier(name: JSXIdentifier | JSXMemberExpression): string {
   return `${parseJSXIdentifier(name.object)}.${parseJSXIdentifier(name.property)}`
 }
 
-export function inspectReact(options: Options): Plugin {
+export function inspectReact(options: Options = {}): Plugin {
   if (!options.type) {
     options.type = "devtool"
   }
