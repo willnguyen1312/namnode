@@ -4,13 +4,16 @@
 
 ### Minor Changes
 
-- [`f8bc19d`](https://github.com/willnguyen1312/namnode/commit/f8bc19d42ecf19e025ca17f8cf519644d1a2260e) Thanks [@willnguyen1312](https://github.com/willnguyen1312)! - Make option optional 💞
+- [`f8bc19d`](https://github.com/willnguyen1312/namnode/commit/f8bc19d42ecf19e025ca17f8cf519644d1a2260e) Thanks
+  [@willnguyen1312](https://github.com/willnguyen1312)! - Make option optional 💞
 
 ## 1.19.0
 
 ### Minor Changes
 
-- [#65](https://github.com/willnguyen1312/namnode/pull/65) [`fc4d7d9`](https://github.com/willnguyen1312/namnode/commit/fc4d7d97e97f36757a5d924eb3c3d19d323c5205) Thanks [@willnguyen1312](https://github.com/willnguyen1312)! - Make default better 💞
+- [#65](https://github.com/willnguyen1312/namnode/pull/65)
+  [`fc4d7d9`](https://github.com/willnguyen1312/namnode/commit/fc4d7d97e97f36757a5d924eb3c3d19d323c5205) Thanks
+  [@willnguyen1312](https://github.com/willnguyen1312)! - Make default better 💞
 
 ## 1.18.0
 

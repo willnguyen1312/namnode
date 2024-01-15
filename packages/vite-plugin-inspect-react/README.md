@@ -64,7 +64,7 @@ const codePath = getCodePathFromElement(element)
 type Options = {
   predicate?: (node: Node) => boolean
   plugins?: PluginItem[]
-  formatDataInspectId?: (id: string) => string
+  base?: string
   type?: "devtool" | "dom"
   propName?: string
 }
@@ -82,10 +82,10 @@ the nodes that you want to ignore.
 Since the plugin is powered by `@babel/core`, you can pass any Babel plugins. For more information, please refer to
 [Babel's documentation](https://babeljs.io/docs/en/plugins).
 
-### formatDataInspectId
+### base
 
-By default, the plugin will generate a unique `data-inspect-id` for each component with an absolute path. However, you
-can pass a function to format the `data-inspect-id` to your liking.
+By default, the plugin will return the absolute path. However, you can override this behavior by passing a base, which
+will be used to resolve the relative path.
 
 ## Development 🧑‍💻
 

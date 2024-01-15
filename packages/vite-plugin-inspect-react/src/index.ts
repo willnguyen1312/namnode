@@ -6,16 +6,12 @@ import { propName } from "./_internal"
 
 type InspecType = "devtool" | "dom"
 
-const defaultFormatDataInspectId = (id: string) => {
-  return id.substring(__dirname.length + 1)
-}
-
 export type Options = {
   predicate?: (node: Node) => boolean
   plugins?: PluginItem[]
-  formatDataInspectId?: (id: string) => string
   type?: InspecType
   propName?: string
+  base?: string
 }
 
 // Credit to https://github.com/sudongyuer/vite-plugin-react-inspector/blob/1f4284ebae2ca7001aff5be4619cd53be49ed862/packages/vite-plugin-react-inspector/src/utils/index.ts#L1-L9
@@ -38,10 +34,6 @@ export function inspectReact(options: Options = {}): Plugin {
 
   if (!options.propName) {
     options.propName = propName
-  }
-
-  if (!options.formatDataInspectId) {
-    options.formatDataInspectId = defaultFormatDataInspectId
   }
 
   return {
@@ -101,7 +93,7 @@ export function inspectReact(options: Options = {}): Plugin {
               if (!start || !end || !node?.loc?.start) return
 
               const { column, line } = node.loc.start
-              const finalId = options.formatDataInspectId ? options.formatDataInspectId(id) : id
+              const finalId = options.base ? id.substring(options.base?.length + 1) : id
               const codePath = `${finalId}:${line}:${column + 1}`
 
               if (options.type === "dom") {
