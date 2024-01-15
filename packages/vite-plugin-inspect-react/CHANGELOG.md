@@ -4,7 +4,9 @@
 
 ### Minor Changes
 
-- [#62](https://github.com/willnguyen1312/namnode/pull/62) [`0bef308`](https://github.com/willnguyen1312/namnode/commit/0bef30822a9816842ee9d3456a68105b877bbcf1) Thanks [@willnguyen1312](https://github.com/willnguyen1312)! - Leverage indexOf on string instead of imperative loop 💞
+- [#62](https://github.com/willnguyen1312/namnode/pull/62)
+  [`0bef308`](https://github.com/willnguyen1312/namnode/commit/0bef30822a9816842ee9d3456a68105b877bbcf1) Thanks
+  [@willnguyen1312](https://github.com/willnguyen1312)! - Leverage indexOf on string instead of imperative loop 💞
 
 ## 1.17.0
 
