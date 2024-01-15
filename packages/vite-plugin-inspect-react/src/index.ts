@@ -6,6 +6,10 @@ import { propName } from "./_internal"
 
 type InspecType = "devtool" | "dom"
 
+const defaultFormatDataInspectId = (id: string) => {
+  return id.substring(__dirname.length + 1)
+}
+
 export type Options = {
   predicate?: (node: Node) => boolean
   plugins?: PluginItem[]
@@ -36,6 +40,10 @@ export function inspectReact(options: Options): Plugin {
     options.propName = propName
   }
 
+  if (!options.formatDataInspectId) {
+    options.formatDataInspectId = defaultFormatDataInspectId
+  }
+
   return {
     name: "vite-plugin-inspect-react",
 
@@ -62,12 +70,18 @@ export function inspectReact(options: Options): Plugin {
           )
         }
 
+        let plugins: PluginItem[] = [["@babel/plugin-proposal-decorators", { decoratorsBeforeExport: true }]]
+
+        if (options.plugins) {
+          plugins = plugins.concat(options.plugins)
+        }
+
         const ast = parse(code, {
           configFile: false,
           filename: id,
           ast: true,
           presets: ["@babel/preset-env", "@babel/preset-react", "@babel/preset-typescript"],
-          plugins: options.plugins,
+          plugins,
         })
 
         traverse(ast as Node, {
