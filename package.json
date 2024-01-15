@@ -36,7 +36,7 @@
     "eslint-config-custom": "workspace:*",
     "esno": "^4.0.0",
     "export-size": "^0.7.0",
-    "prettier": "^3.1.1",
+    "prettier": "^3.2.2",
     "turbo": "^1.11.3"
   }
 }
