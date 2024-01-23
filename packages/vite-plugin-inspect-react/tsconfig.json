@@ -6,6 +6,6 @@
     "lib": ["ESNext", "DOM"],
     "target": "ESNext",
     "jsx": "react-jsx",
-    "module": "ESNext"
-  }
+    "module": "ESNext",
+  },
 }

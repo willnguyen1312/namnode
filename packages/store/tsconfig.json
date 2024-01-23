@@ -5,6 +5,6 @@
   "compilerOptions": {
     "types": ["vitest/importMeta", "vitest/globals"],
     "lib": ["ESNext", "DOM"],
-    "target": "ESNext"
-  }
+    "target": "ESNext",
+  },
 }

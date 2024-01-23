@@ -4,7 +4,8 @@
 
 ### Minor Changes
 
-- [`d193911`](https://github.com/willnguyen1312/namnode/commit/d193911fb93c8709ff9f4d56a4576ff7113abfed) Thanks [@willnguyen1312](https://github.com/willnguyen1312)! - Add base option 💞
+- [`d193911`](https://github.com/willnguyen1312/namnode/commit/d193911fb93c8709ff9f4d56a4576ff7113abfed) Thanks
+  [@willnguyen1312](https://github.com/willnguyen1312)! - Add base option 💞
 
 ## 1.20.0
 
